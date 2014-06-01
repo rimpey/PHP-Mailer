@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Contact Me Form</title>
+        <link href="/css/site.less" rel="stylesheet/less" type="text/css" />
+        <!--<link href="/css/site.css" rel="stylesheet" type="text/css" />-->
+        <!-- need script to generate .less to .css during development
+             compile less into css for production manually -->
+        <script type="text/javascript" src="/js/lib/less-1.5.0.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    </head>
+	<body>
+        <div id="contactmeformmap-container">
+            <!--<form action="http://localhost:41031/sendmail.php" method="post" class="contact" onsubmit="return formvalidation(this);">-->
+            <form>    
+                <div id="name-co-container">
+                    <input type="text" id="fullname" name="fullname" placeholder="FULL NAME" class="forminput" required><br>
+                    <input type="text" name="company" placeholder="COMPANY" class="forminput" required><br>   
+                </div> <!-- end name-co-container -->
+                <div id="email-pcode-container">
+                    <input type="email" name="email" placeholder="EMAIL" class="forminput" required><br>
+                    <input type="text" name="postcode" placeholder="POSTCODE" class="forminput" required><br>
+                </div> <!-- end email-pcode-container -->
+
+                <textarea name="message" placeholder="LEAVE A MESSAGE" class="forminput formmsg" required></textarea>
+                <input type="submit" value="Submit" id="submit">
+
+            </form> 
+            <div id="sentmsg">
+                
+            </div> 
+        </div> <!-- end contactmeformmap-container-->
+
+		<!-- standard form redirects to action and then looses all info on form so can't use POST/GET so either reload complete
+		     page or use ajax => asynchonrous request without reloading the page -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!--safe guard if external sources fail rely on local fallback --> 
+        <script>window.jQuery || document.write('<script src="js/lib/jquery-1.11.0.min.js"><\/script>')</script>
+        <script type="text/javascript" src="/js/script.js"></script>
+
+	</body>
+
+</html>
