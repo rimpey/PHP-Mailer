@@ -3,24 +3,27 @@ PHP-Mailer
 
 Enquiry Form to send data via gmail's SMTP protocol.
 
-=> PHPMailer code copied into this project is popular code for sending emails from PHP
-=> Integrated SMTP support - sent without a local mail server
-=> PHPMailer provides an SPL-compatible autoloader the preferred way of loading the library - just make sure to include
+* PHPMailer code copied into this project is popular code for sending emails from PHP
+* Integrated SMTP support - sent without a local mail server
+* PHPMailer provides an SPL-compatible autoloader the preferred way of loading the PHP Mailer library 
+  - just make sure to include:
       require '/path/to/PHPMailerAutoload.php
 
 Data entered into the enquiry form is first validated using jQuery, looping through each field to ensure that all 
 required fields have a value and that the email and postcode are according to pattern stipulated using regex. The
-normal form submit is prevented so as not to clear the form prior to validation, returning false. The $.post ajax 
-method serializes form data and sends it to the sendmail.php where the settings for gmail's mail SMTP protocol are
-configured, a success or fail message is echo'd from this file to appear on the index.html page.
+normal form submit is prevented so as not to reload the page - nicer user experience as page jumps to the top and 
+refreshes any animations start again, returning false stops normal submit.
 
-(1) PHP installation
+The $.post ajax method is called with serialized form data and sends it to the sendmail.php where the settings for 
+gmail's mail SMTP connection settings are configured, a success or fail message is echo'd from this file to appear on the index.html page.
+
+##(1) PHP installation
 
 This project was developed using WebMatrix which upon creating a php file auto installed PHP into:
       c:\Program Files(x86)\IIS Express\PHP\v5.3\
 to ensure that WebMatrix could run php on it's own IIS Express Web Server, if a fully blown install did not exist.
 
-(2) PHP Mailer
+##(2) PHP Mailer
 
 Next this project needed to email form data to an email address, appropriately configuring gmails SMTP settings. 
 I found this GitHub site very helpful in explaining the steps required:
@@ -32,12 +35,18 @@ Here you are instructed to:
        (b) create the directory c:\php\includes
        (c) copy files provided in this GitHub account into the includes directory, reference installation and loading
            where you are directed to the PHPMailer files to download and copy into your includes directory
-       (d) follow example on front page of ReadMe file for PHPMailer to configure gmail SMTP settings so you can send emails
+       (d) follow example on front page of ReadMe file for PHPMailer to configure gmail SMTP settings so you can send   
+               emails
        (e) make sure you place line of code at the top of your .php file
                require 'PHPMailerAutoload.php';
           
+##(3) How to use Gmail as a Mail Server
+I found this website very useful for the SMTP port setting associated with SMTP Security: TLS
+       http://docs.joomla.org/How_do_I_use_Gmail_as_my_mail_server%3F
+
 A Simple Example as found on: https://github.com/PHPMailer/PHPMailer
 
+```php
 <?php
 require 'PHPMailerAutoload.php';
 
@@ -74,4 +83,4 @@ if(!$mail->send()) {
     echo 'Message has been sent';
 }
 
-
+```
