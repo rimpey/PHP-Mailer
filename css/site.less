@@ -1,0 +1,66 @@
+
+@import "reset.less";
+
+@white: #FFFFFF;
+@greyslide: #7B7D89; 
+@slideText: 'Source Sans Pro', sans-serif;
+
+#sentmsg{
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#contactmeformmap-container {
+    
+    font-family: @slideText;
+    color: @white;
+    background-color: @greyslide;
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+        
+    #name-co-container, #email-pcode-container {
+        width: 30%;
+        float: left;
+        font-family: @slideText;
+        font-size: 18px;            
+   }
+
+    .forminput {
+ 
+        width: 90%;
+        /* takes off default shadow of input box */
+        border: 1px solid white;
+        border-radius: 5px;
+        height: 25px;
+        margin: 5px 0px;
+        padding: 5px;
+        font-family: 'Source Sans Pro', sans serif;
+
+        &.formmsg {
+            width: 30%; 
+            height: 73px; 
+            float: left;  
+        }
+    }
+    
+    #submit {
+        width: 5%;
+        float: left;
+        border: 1px solid white;
+        border-radius: 5px;
+        height: 84px;
+        padding: 5px;
+        margin-top: 5px;
+        margin-left: 30px;
+    }
+    
+    .error{
+        border: 1px solid red;
+    }
+    
+} /* end contactmeformmap-container */
