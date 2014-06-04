@@ -1,3 +1,6 @@
+![alt text](http://docs.rhondaimpey.com/img/formaction.jpg "Form Action")
+
+
 PHP-Mailer
 ==========
 
