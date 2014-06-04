@@ -30,14 +30,14 @@ I found this GitHub site very helpful in explaining the steps required:
        https://github.com/PHPMailer/PHPMailer
        
 Here you are instructed to: 
-       (a) go into the c:\Program Files(x86)\IIS Express\PHP\v5.3\php.ini file and uncomment the line:
+       (1) go into the c:\Program Files(x86)\IIS Express\PHP\v5.3\php.ini file and uncomment the line:
                include_path = ".;c:\php\includes"
-       (b) create the directory c:\php\includes
-       (c) copy files provided in this GitHub account into the includes directory, reference installation and loading
+       (2) create the directory c:\php\includes
+       (3) copy files provided in this GitHub account into the includes directory, reference installation and loading
            where you are directed to the PHPMailer files to download and copy into your includes directory
-       (d) follow example on front page of ReadMe file for PHPMailer to configure gmail SMTP settings so you can send   
+       (4) follow example on front page of ReadMe file for PHPMailer to configure gmail SMTP settings so you can send   
                emails
-       (e) make sure you place line of code at the top of your .php file
+       (5) make sure you place line of code at the top of your .php file
                require 'PHPMailerAutoload.php';
           
 ##(3) How to use Gmail as a Mail Server
